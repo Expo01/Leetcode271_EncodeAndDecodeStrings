@@ -24,6 +24,12 @@ public class Codec { // CONCEPT OF DELIMITER
         // just accounts for  "" situation otherwise won't return anything
         return new ArrayList<>(Arrays.asList(decodedStrings).subList(0, decodedStrings.length - 1));
         //We remove the last element because it's an empty string resulting from the 'content' after the final delimiter
+        // positive delimiter just states this is how many arrray items will be allowed to be createeed, afteer
+        // which all delimiters ignored and just lumped into one array index value
+
+        // the .subList(0,length-1) is needed i think because otherwise answer returns with empty space at the end. Think
+        // its from empty string added when last regex character found which is the last character so it separates last
+        // string frmo "" whitespace
     }
 }
 
